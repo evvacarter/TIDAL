@@ -1,0 +1,183 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --aqua: #40f0e7;
+    --cyan: #11c9df;
+    --deep: #032c48;
+    --glass: rgba(10, 94, 123, .42);
+    --line: rgba(115, 248, 244, .55);
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    min-width: 320px;
+    font-family: "DM Sans", sans-serif;
+    background: #032b46;
+    color: #fff;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+button{
+    font: inherit;
+}
+.hero{
+    position: relative;
+    isolation: isolate;
+    min-height: 100svh;
+    height: max(760px, 100svh);
+    overflow: hidden;
+    background: #075477;
+}
+.hero-image,
+.hero-shade{
+    position: absolute;
+    inset: 0;
+    z-index: -4;
+}
+.hero-image{
+    background: url("oceanimg.avif") center 48% / cover no-repeat;
+    transform: scale(1.045);
+    animation: imageReveal 1.8s ease-out both,
+               slowDrift 24s 1.8s ease-in-out infinite alternate;
+}
+.hero-shade{
+    z-index: -3;
+    background: linear-gradient( 90deg, rgba(0, 37, 62, .96) 0%,
+                rgba(0, 47, 75, .82) 28%, rgba(0, 54, 79, .35)  52%,
+                rgba(0, 65, 91, .05) 100%),
+                linear-gradient( 0deg, rgba(0, 53, 69, .42), transparent 35%),
+                linear-gradient( 108deg, rgba(0, 39, 67, .2), transparent 28%);
+}
+.ambient-glow{
+    position:  absolute;
+    z-index: -2;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    opacity: .2;
+}
+.glow-one {
+    background: #00e6d4;
+    right: 5%;;
+    bottom: 0;
+}
+.glow-two {
+    background: #087cc1;
+    left: -180px;
+    top: 10%;
+}
+.topbar{
+    position: relative;
+    z-index: 10;
+    width: min(92%, 1480px);
+    margin: 0 auto;
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.brand{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font: 600 34px "Outfit", sans-serif;
+    letter-spacing: -.8px;
+}
+.brand-mark {
+    width: 76px;
+    height: 56px;
+    fill: var(--aqua);
+    filter: drop-shadow( 0 0 12px #22e9e0);
+}
+.desktop-nav{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px;
+    border: 1px solid  rgba(180, 245, 255, .3);
+    border-radius: 50px;
+    background: rgba(151, 218, 241, .15);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18),
+             0 10px 35px rgba(0, 25, 50, .12);
+    backdrop-filter: blur(18px);         
+}
+.nav-link{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 19px;
+    border-radius: 30px;
+    color: rgba(255,255,255,.88);
+    font-size: 15px;
+    transition: background .3s, color .3s;
+}
+.nav-link:hover,
+.nav-link.active{
+    color:#fff;
+    background: rgba(255,255,255,.12);
+}
+.nav-link.active::after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    left: 18px;
+    right: 18px;
+    bottom: -8px;
+    border-radius: 5px;
+    background: var(--aqua);
+    box-shadow: 0 0 12px var(--aqua);
+}
+.nav-icon{
+    font-size: 22px;
+    line-height: 1;
+    color: #c9ffff;
+}
+.menu-toggle{
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(207, 255, 255, .35);
+    border-radius: 50%;
+    background: rgba(174,235,255,.17);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 24px rgba(48,231,245,.18);
+    transition: .3s ease;
+}
+.menu-toggle:hover{
+    transform:  rotate(8deg);
+    background: rgba(174,235,255,.28);
+}
+.menu-toggle span{
+    width: 27px;
+    height: 2px;
+    background: white;
+    border-radius: 5px;
+    transition: .3s;
+}
+.menu-toggle[aria-expanded="true"] span:first-child{
+    transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){
+    opacity: 0;
+}
+.menu-toggle[aria-expanded="true"] span:last-child{
+    transform: translateY(-8px) rotate(-45deg);
+}
+

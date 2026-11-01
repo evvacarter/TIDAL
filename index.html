@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#042d49">
+    <title>Tidal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnected" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+ <main class="hero" id="home">
+    <div class="hero-image"></div>
+    <div class="hero-shade"></div>
+    <div class="amibent-glow glow-one"></div>
+    <div class="ambeint-glow glow-two"></div>
+    <header class="topbar">
+    <a class="brand" href="#home" aria-label="Tidal home">
+        <svg class="brand-mark" viewBox="0 0 90 62" aria-hidden="true">
+            <path d="MS 31C24 5 43 5 62 25C70 33 78 36 87 35C69 52 50 51 34 37C23 27 15 26 5 312"/>
+            <path d="M10 45C27 25 43 25 58 39C66 46 75 49 84 47C66 61 48 60 33 50C24 44 17 42 10 45Z"/>
+        </svg>
+        <span>TIDAL</span>
+    </a>
+    <!-- Navigation Bar -->
+     <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="nav-links active" href="#home">
+            <span class="nav-icon">HOME</span>
+        </a>
+        <a class="nav-links" href="#about">
+            <span class="nav-icon">ABOUT</span>
+        </a>
+        <a class="nav-link" href="#discover">
+            <span class="nav-icon">DISCOVER</span>
+        </a>
+     </nav>
+     <!-- Hamburger Menu -->
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+    <!-- Mobile navigation -->
+     <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#home"><span>Home</span></a>
+        <a href="#explore"><span>Explore</span></a>
+        <a href="#discover"><span>Discover</span></a>
+     </nav>
+     <!-- Hero content -->
+      <section classs="hero-content" aria-labelledby="hero-title">
+        <div class="eyebrow">
+            <span></span>
+            DIVE DEEPER
+        </div>
+        <h1 id="hero-title">Tidal
+            <span class="title-wave" aria-hidden="true"></span>
+        </h1>
+        <h2> 
+            Explore the Ocean's<br>
+            <em>Hidden Wonders</em>
+        </h2>
+        <p class="intro">Discover the oceanic world , <br class="desktop-break">
+          and a world beneath the waves.</p>
+          <!-- Hero Buttons -->
+           <div class="hero-actions">
+            <a class="primary-btn" href="#explore"> Start Exploring
+                <span>-></span>
+            </a>
+           </div>
+      </section>
+      <!-- three features cards -->
+       <section class="feature-cards" id="explore" aria-label="Explore ocean topics">
+        <!-- card one -->
+         <a class="feature-card" href="#marine">
+            <span class="feature-symbol wave-symbol">~~~~
+            </span>
+            <span class="feature-copy">
+                <strong>Vibrant Marine Life</strong>
+                <small>Discover diverse ocean life.</small>
+            </span>
+            <span class="cards-arrow">-></span>
+         </a>
+         <!-- Card two -->
+          <a class="feature-card" href="#islands">
+            <span class="feature-symbol palm-symbol">
+            </span>
+            <span class="feature-copy">
+                <strong>Stunning Islands</strong>
+                <small>Explore breathetaking islands.</small>
+            </span>
+            <span class="cards-arrow">-></span>
+         </a>
+         <!-- Card three -->
+         <a class="feature-card" href="#oceans">
+            <span class="feature-symbol coral-symbol">
+            </span>
+            <span class="feature-copy">
+                <strong>Healthy Oceans </strong>
+                <small>Learn. Protect. Preserve.</small>
+            </span>
+            <span class="cards-arrow">-></span>
+         </a>
+       </section>
+       <!-- Right side explore more panel -->
+        <div class="compass">*</div>
+        <div class="panel-copy">
+            <strong>Explore More</strong>
+            <p> Dive into nature's <br> hidden wonders.</p>
+        </div>
+        <a href="#about" class="panel-arrow" aria-label="Explore more">-></a>
+        <div class="panel-waves">
+            <i></i>
+            <i></i>
+        </div>
+        <!-- Bottom scrool indicator -->
+         <div class="scroll-cue" aria-hidden="true">
+            <span class="mouse">
+            <i></i>
+            </span>
+            <span class="scroll-lines"></span>
+            <span class="chevrons">
+             ^   
+            </span>
+         </div>
+         <!-- Bottom ocean waves -->
+          <div class="bottom-waves" aria-hidden="true">
+            <svg vieewBox="0 0 1440 210"
+            preserveAspectRatio="none">
+            <path class="wave-back" d="M0 65C180 0 310 490 118C690 105 740 160 930 142C1120 125 1270 110 1440 15V210H0Z"/>
+            <path class="wave-front" d="M0 112C170 35 300 165 490 166C700 168 790 195 990 160C1190 125 1320 125 1440 55V210H0Z"/>
+            </svg>
+          </div>
+
+ </main>
+
+ <script src="script.js"></script>
+</body>
+</html>

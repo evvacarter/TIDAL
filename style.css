@@ -99,12 +99,13 @@ button{
 }
 .desktop-nav{
     position: absolute;
+    top: 28px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
     gap: 5px;
-    padding: 8px;
+    padding: 7px;
     border: 1px solid  rgba(180, 245, 255, .3);
     border-radius: 50px;
     background: rgba(151, 218, 241, .15);
@@ -116,12 +117,12 @@ button{
     position: relative;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 19px;
+    padding: 12px 17px;
     border-radius: 30px;
-    color: rgba(255,255,255,.88);
+    color: rgba(255,255,255,.9);
     font-size: 15px;
-    transition: background .3s, color .3s;
+    font-weight: 600;
+    transition: background .3s ease, color .3s ease;
 }
 .nav-link:hover,
 .nav-link.active{
@@ -131,18 +132,19 @@ button{
 .nav-link.active::after{
     content: "";
     position: absolute;
-    height: 3px;
+    height: 2px;
     left: 18px;
     right: 18px;
-    bottom: -8px;
+    bottom: -5px;
     border-radius: 5px;
     background: var(--aqua);
     box-shadow: 0 0 12px var(--aqua);
 }
 .nav-icon{
-    font-size: 22px;
+    font-size: 16px;
     line-height: 1;
-    color: #c9ffff;
+    color: #d8ffff;
+    letter-spacing: .5px;
 }
 .menu-toggle{
     width: 60px;
@@ -209,13 +211,6 @@ button{
 .mobile-nav a:first-letter{
     color:var(--aqua);
 }
-.hero-content{
-    position: relative;
-    z-index: 2;
-    width: min(92%, 1480px);
-    margin: clamp(75px,8vh,120px) auto 0;
-    animation: contentIn 1s .15s both;
-}
 .eyebrow{
     display: flex;
     align-items: center;
@@ -232,11 +227,10 @@ button{
     background: var(--aqua);
     box-shadow: 0 0 12px var(--aqua);
 }
-h1{
-    position: relative;
-    display: inline-block;
+.hero-content h1{
+    margin: 0;
     font: 800  clamp(100px,11vw,178px)/.83 "Outfit", sans-serif;
-    letter-spacing: -9px;
+    letter-spacing: -8px;
     color: #fff;
     text-shadow: 0 7px 30px rgba(0,32,53,.18);
 }
@@ -251,16 +245,25 @@ h1{
     transform: rotate(-5deg);
     filter: drop-shadow(0 0 8px rgba(51,255,237,.5));
 }
-h2 em {
+.hero-content h2 {
+    margin-top: 18px;
+    color: #fff;
+    font-weight: 650;
+    line-height: 1.12;
+    letter-spacing: -.8px;
+}
+.hero-content h2 em{
     color: var(--aqua);
     font-style: normal;
-    font-weight: 600;
+    font-weight: 650;
 }
-.intro{
+.hero-content .intro{
+    max-width: 440px;
     margin-top: 17px;
     color: rgba(255,255,255,.9);
     font-size: 18px;
-    line-height: 1.55;
+    line-height: 1.7;
+    letter-spacing: .1px;
 }
 .hero-actions{
     display: flex;
@@ -319,10 +322,10 @@ h2 em {
     overflow: hidden;
     background: linear-gradient(135deg, rgba(33,139,160,.48),
     rgba(2,55,83,.62));
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 012px 30px 
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 12px 30px 
     rgba(0,29,49,.14);
     backdrop-filter: blur(17px);
-    transition: transform .35s, border-color .35s, background .35s;
+    transition: transform .35s ease, border-color .35s ease, background .35s ease;
 }
 .feature-card::before{
     content: "";
@@ -337,10 +340,9 @@ h2 em {
     transition: transform .4s;
 }
 .feature-card:hover{
-    transform: translateY(-9px);
+    transform: translateY(-8px);
     border-color: #8afff7;
-    background: linear-gradient(135deg, rgba(37,168,174,.62),
-    rgba(2,65,93,.72));
+    background: rgba(77, 239, 235, .48);
 }
 .feature-card:hover::before{
     transform: scale(2.2);
@@ -522,17 +524,18 @@ h2 em {
     left: 0;
     right: 0;
     bottom: -1px;
-    height: 175px;
+    height: 150px;
 }
 .bottom-waves svg{
+    display: block;
     width: 100%;
     height: 100%;
 }
 .wave-back{
-    fill: rgba(0,174,196,.24);
+    fill: rgba(0,174,196,.20);
 }
 .wave-font{
-    fill: rgba(0,201,196,.28);
+    fill: rgba(0,201,196,.30);
 }
 @keyframes imageReveal{
     from{
@@ -584,7 +587,7 @@ h2 em {
 }
 @keyframes chevron{
     0%,100%{
-        transform: translateY(-50%,0);
+        transform: translate(-50%, 0);
         opacity: .5;
     }
     50%{

@@ -52,3 +52,54 @@ interactiveCards.forEach(function (card) {
     });
   });
 });
+// footer page code start from here 
+document.addEventListener('DOMContentLoaded', () => {
+    const copyEl = document.querySelector('.copy-text');
+    if (copyEl) {
+        const currentYear = new Data().getFullYear();
+        copyEl.innerHTML = `copy; ${currentYear} TIDAL. All right reserved.`;
+    }
+    const footerAnchors = document.querySelectorAll('.f-links a, .f-logo, .bar-links a');
+    footerAnchors.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                const targetSection = document.querySelectorAll(targetId);
+            
+            if (targetSection) {
+                e.preventDefault();
+                const headerOffset = 70;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                document.querySelectorAll('.f-links a').forEach(a => a.classList.remove('active-target'));
+                if (link.closest('.f-links')) {
+                    link.classList.add('active-target');
+                }
+            }
+        }
+        });
+    });
+    const cards = document.querySelectorAll('.f-card');
+    const isTouchDevice = 'onTouchstart' in window || navigator.maxTouchPoints > 0;
+    if (!isTouchDevice) {
+        cards.forEach(cards => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -5;
+                const rotateY = ((x - centerX) / centerX) * 5;
+                card.style.transform = `perspective(800px) roatateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY. toFixed(2)}deg) translateY(-4px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)`;
+            });
+        });
+    }
+});
